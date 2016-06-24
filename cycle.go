@@ -1,4 +1,4 @@
-package main
+package cycle
 
 import "time"
 
@@ -10,7 +10,6 @@ type CycleProc struct {
 }
 
 func doProcess(obj CycleProc) {
-
 	go func() {
 		sleepTime := time.Duration(obj.time) * time.Millisecond
 		t := time.NewTicker(sleepTime)
@@ -24,5 +23,4 @@ func doProcess(obj CycleProc) {
 		}
 		t.Stop()
 	}()
-
 }
