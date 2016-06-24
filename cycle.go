@@ -4,20 +4,20 @@ import "time"
 
 // CycleProc is cycleprocess task
 type CycleProc struct {
-	time   int
-	flg    bool
-	action func()
+	Time   int
+	Flg    bool
+	Action func()
 }
 
-func doProcess(obj CycleProc) {
+func DoProcess(obj CycleProc) {
 	go func() {
-		sleepTime := time.Duration(obj.time) * time.Millisecond
+		sleepTime := time.Duration(obj.Time) * time.Millisecond
 		t := time.NewTicker(sleepTime)
-		for obj.flg == true {
+		for obj.Flg == true {
 			for {
 				select {
 				case <-t.C:
-					obj.action()
+					obj.Action()
 				}
 			}
 		}
