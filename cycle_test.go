@@ -12,11 +12,11 @@ import (
 
 func TestConstructorWithFullname(t *testing.T) {
 	var aho CycleProc
-	aho.action = yaruyo
-	aho.flg = true
-	aho.time = 3
-	doProcess(aho)
-	aho.flg = false
+	aho.Action = yaruyo
+	aho.Flg = true
+	aho.Time = 3
+	DoProcess(aho)
+	aho.Flg = false
 	sleepTime := time.Duration(5) * time.Millisecond
 	time.Sleep(sleepTime)
 	if exists("hoge") != true {
